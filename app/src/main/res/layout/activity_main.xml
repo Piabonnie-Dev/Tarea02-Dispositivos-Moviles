@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F5F5F5">
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+
+<!--TITULO-->
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="VOCAWORLD"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="#00A7C4"
+        android:gravity="center"
+        android:layout_marginTop="15dp" />
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Vocaloid y sintetizadores de voz"
+      android:textSize="16sp"
+      android:textColor="#555555"
+      android:gravity="center"
+      android:layout_marginTop="5dp"
+      android:layout_marginBottom="15dp" />
+
+       <!--IMAGEN TEMPORAL -->
+
+       <ImageView
+          android:id="@+id/imgLogo"
+          android:layout_width="380dp"
+           android:layout_height="380dp"
+           android:layout_gravity="center"
+           android:scaleType="fitCenter"
+           android:src="@drawable/vocaworld"
+           android:contentDescription="logo de VocaWorld"
+           android:layout_marginBottom="20dp" />
+
+       <!-- NOMBRE DEL USUARIO -->
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Como te llamas?"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    android:textColor="#222222" />
+
+        <EditText
+            android:id="@+id/etNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Escribe tu nombre"
+            android:inputType="textPersonName"
+            android:padding="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="20dp" />
+
+        <!--Personaje favorito -->
+      <TextView
+         android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="SELECCIONA TU PERSONAJE FAVORITO"
+          android:textSize="20sp"
+          android:textStyle="bold"
+          android:textColor="#222222"
+          android:layout_marginBottom="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/rgPersonajes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rbMiku"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hatsune Miku"
+                android:textSize="17sp"/>
+
+            <RadioButton
+                android:id="@+id/rbTeto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kasane Teto"
+                android:textSize="17sp"/>
+
+            <RadioButton
+                android:id="@+id/rbNeru"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Akita Neru"
+                android:textSize="17sp"/>
+
+            <RadioButton
+                android:id="@+id/rbDefoko"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Defoko"
+                android:textSize="17sp"/>
+
+            <RadioButton
+                android:id="@+id/rbGumi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GUMI"
+                android:textSize="17sp"/>
+
+            <RadioButton
+                android:id="@+id/rbAdachi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Adachi Rei"
+                android:textSize="17sp"/>
+
+        </RadioGroup>
+
+        <!-- INTERESES -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¿Qué te interesa?"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#222222"
+            android:layout_marginTop="22dp"
+            android:layout_marginBottom="8dp"/>
+
+        <CheckBox
+            android:id="@+id/cbCanciones"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Canciones"
+            android:textSize="17sp"/>
+
+        <CheckBox
+            android:id="@+id/cbPersonajes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Diseño de personajes"
+            android:textSize="17sp"/>
+
+        <CheckBox
+            android:id="@+id/cbVideos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Videos musicales"
+            android:textSize="17sp"/>
+
+        <CheckBox
+            android:id="@+id/cbHistoria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Historia de los personajes"
+            android:textSize="17sp"/>
+
+        <!-- COMENTARIO -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¿Cuál es tu canción favorita?"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#222222"
+            android:layout_marginTop="22dp"/>
+
+        <EditText
+            android:id="@+id/etCancion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Escribe el nombre de una canción"
+            android:inputType="textCapWords"
+            android:padding="12dp"
+            android:layout_marginTop="5dp"/>
+
+        <!-- BOTÓN -->
+
+        <Button
+            android:id="@+id/btnContinuar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CONTINUAR"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"/>
+
+
+
+
+</LinearLayout>
+</ScrollView>
