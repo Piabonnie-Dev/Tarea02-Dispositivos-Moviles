@@ -1,115 +1,119 @@
-# VocaWorld - Tarea 02 de Dispositivos Moviles
 
-Aplicación desarrollada en **Android Studio utilizando Kotlin y XML**.
+# VocaWorld - Tarea 03
 
-El objetivo del proyecto es crear una aplicación Android que utilice diferentes componentes gráficos y que cuente con más de una pantalla o máximo 2 pantallas.
-
+## Programación de Dispositivos Móviles
 
 ## Autor
-
 **Elliot Kenneth Villafaña Pasten**
 
+### Descripción
 
-## Descripción del proyecto
+La Tarea 03 es una continuación del proyecto VocaWorld, desarrollado en Android Studio utilizando Kotlin y XML.
 
-**VocaWorld** es una aplicación sencilla relacionada con personajes de Vocaloid y sintetizadores de voz.
+En esta versión se implementa una interfaz gráfica mediante el componente `ListView`, que permite visualizar y seleccionar personajes de VocaWorld.
 
-La aplicación permite al usuario ingresar su nombre, seleccionar un personaje favorito, indicar algunos de sus intereses y escribir el nombre de una canción favorita.
+La lista utiliza un adaptador personalizado para mostrar imágenes, nombres y clasificaciones de los personajes.
 
-Los personajes disponibles son:
+## Funcionalidades
 
-- Hatsune Miku
-- Kasane Teto
-- Akita Neru
-- Defoko
-- GUMI
-- Adachi Rei
+- Visualización de seis personajes mediante `ListView`.
+- Imágenes individuales para cada personaje.
+- Tarjetas personalizadas con nombres, clasificaciones e iconos musicales.
+- Diseño con colores, bordes redondeados y efectos de selección.
+- Desplazamiento vertical de la lista.
+- Detección de pulsaciones mediante `setOnItemClickListener`.
+- Mensajes `Toast` que indican el personaje seleccionado.
 
-Después de seleccionar un personaje, la aplicación abre una segunda pantalla donde se muestra una ficha con información relacionada con el personaje elegido.
+## Personajes disponibles
 
+1. Hatsune Miku
+2. Kasane Teto
+3. Akita Neru
+4. Defoko
+5. GUMI
+6. Adachi Rei
 
-## Funcionamiento de la aplicación
+## Funcionamiento
 
-### Pantalla principal
+Al iniciar la aplicación se muestra el catálogo de personajes de VocaWorld.
 
-En la primera pantalla el usuario puede:
+Cada elemento de la lista contiene:
 
-1. Escribir su nombre.
-2. Seleccionar uno de los seis personajes disponibles mediante `RadioButton`.
-3. Seleccionar diferentes intereses mediante `CheckBox`.
-4. Escribir el nombre de su canción favorita.
-5. Presionar el botón **CONTINUAR**.
-
-Si el usuario no escribe su nombre o no selecciona un personaje, la aplicación muestra un mensaje indicando que debe completar dicha información.
-
-
-### Pantalla de personaje
-
-Después de presionar **CONTINUAR**, se abre una segunda pantalla.
-
-Esta pantalla muestra:
-
-- Nombre del usuario.
-- Nombre del personaje seleccionado.
 - Imagen del personaje.
-- Tipo de personaje.
-- Información general del personaje.
-- Canción favorita escrita en la primera pantalla.
-- Botón **ELEGIR OTRO PERSONAJE**.
+- Nombre.
+- Clasificación.
+- Icono musical.
 
-Al presionar **ELEGIR OTRO PERSONAJE**, la aplicación regresa a la pantalla principal.
+Al seleccionar un personaje, el evento `setOnItemClickListener` identifica su posición dentro del arreglo y muestra un mensaje `Toast`.
 
+Por ejemplo:
 
-## Componentes de Android utilizados
+"Seleccionaste a Hatsune Miku"
 
-Durante el desarrollo se utilizaron los siguientes componentes gráficos:
+La selección funciona de manera independiente. Por el momento, la lista no se comunica con las demás pantallas de la aplicación, de acuerdo con los requisitos de la tarea.
 
-- `TextView`
-- `EditText`
-- `ImageView`
-- `RadioGroup`
-- `RadioButton`
-- `CheckBox`
-- `Button`
-- `ScrollView`
-- `LinearLayout`
+## Archivos principales
 
-También se utilizaron:
+### MainActivity.kt
+Contiene la configuración del `ListView`, el arreglo de personajes y el evento `setOnItemClickListener`.
 
-- `Intent` para cambiar de una pantalla a otra.
-- `putExtra()` para enviar información entre actividades.
-- `Toast` para mostrar mensajes al usuario.
+### PersonajeAdapter.kt
+Adaptador personalizado encargado de asignar las imágenes, nombres y clasificaciones a cada elemento de la lista.
 
----
+### activity_lista.xml
+Define la interfaz principal del catálogo, incluyendo el logo, títulos y componente `ListView`.
 
-## Estructura principal del proyecto
+### item_personaje.xml
+Define el diseño individual de cada fila de la lista.
 
-```text
-Tarea02
-│
-├── app
-│   └── src
-│       └── main
-│           │
-│           ├── java/com/example/tarea02
-│           │   ├── MainActivity.kt
-│           │   └── CharacterActivity.kt
-│           │
-│           ├── res
-│           │   ├── layout
-│           │   │   ├── activity_main.xml
-│           │   │   └── activity_character.xml
-│           │   │
-│           │   └── drawable
-│           │       ├── miku.png
-│           │       ├── teto.png
-│           │       ├── neru.png
-│           │       ├── defoko.png
-│           │       ├── gumi.png
-│           │       └── adachi_rei.png
-│           │
-│           └── AndroidManifest.xml
-│
-├── build.gradle.kts
-├── settings.gradle.kts
-└── README.md
+### fondo_fila.xml
+Recurso gráfico que establece el fondo, los bordes y las esquinas redondeadas de las tarjetas.
+
+## Tecnologías utilizadas
+
+- Kotlin
+- XML
+- Android Studio
+- ListView
+- ArrayAdapter
+- ImageView
+- TextView
+- Toast
+- setOnItemClickListener
+
+## Ejecución
+
+1. Clonar o descargar el repositorio.
+2. Abrir el proyecto en Android Studio.
+3. Esperar la sincronización de Gradle.
+4. Seleccionar un emulador Android.
+5. Ejecutar la aplicación mediante Run.
+
+La interfaz de la Tarea 03 se muestra cuando la variable `mostrarLista` de `MainActivity.kt` tiene el valor `true`.
+
+## Versiones del proyecto
+
+Este repositorio conserva las diferentes etapas del desarrollo de VocaWorld mediante commits y etiquetas de Git.
+
+### Tarea 02
+Implementación inicial de la aplicación con selección de personajes y visualización de información.
+
+### Tarea 03
+Implementación de un catálogo visual mediante `ListView`, adaptador personalizado y detección de selección de elementos.
+
+**Tag de entrega: `tarea03`**
+
+Para consultar específicamente el código correspondiente a la Tarea 03:
+
+1. Ingresar al repositorio en GitHub.
+2. Abrir la sección **Tags**.
+3. Seleccionar la etiqueta `tarea03`.
+4. Consultar o descargar el código correspondiente a esta versión.
+
+La etiqueta `tarea03` permite identificar la entrega de forma independiente de modificaciones posteriores del repositorio.
+
+## Estado del proyecto
+
+Tarea 03 finalizada.
+
+Se implementó el componente `ListView` y su evento `setOnItemClickListener`, conservando la independencia entre las interfaces de las tareas anteriores.
