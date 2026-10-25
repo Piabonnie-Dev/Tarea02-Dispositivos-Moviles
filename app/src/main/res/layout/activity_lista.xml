@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="18dp"
+    android:background="#F4F8FB">
+
+    <!-- Logo de VocaWorld -->
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="88dp"
+        android:layout_gravity="center"
+        android:src="@drawable/vocaworld"
+        android:scaleType="fitCenter"
+        android:contentDescription="Logo de VocaWorld"
+        android:layout_marginTop="10dp" />
+
+    <!-- Identificador de la tarea -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TAREA 03 - LISTVIEW"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textColor="#008BA3"
+        android:gravity="center"
+        android:layout_marginTop="8dp" />
+
+    <!-- Titulo principal -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Catalogo de personajes"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#222222"
+        android:gravity="center"
+        android:layout_marginTop="8dp" />
+
+    <!-- Descripcion -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Descubre las voces de VocaWorld"
+        android:textSize="15sp"
+        android:textColor="#666666"
+        android:gravity="center"
+        android:layout_marginTop="6dp" />
+
+    <!-- Indicador de personajes -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="12dp"
+        android:background="#DFF4F8"
+        android:layout_marginTop="18dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="♫"
+            android:textSize="24sp"
+            android:textColor="#008BA3"
+            android:layout_marginEnd="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6 personajes disponibles"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#176477" />
+
+    </LinearLayout>
+
+    <!-- Lista de personajes -->
+    <ListView
+        android:id="@+id/lvPersonajes"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="10dp"
+        android:listSelector="#5500A7C4"
+        android:drawSelectorOnTop="true" />
+
+    <!-- Indicacion inferior -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Toca un personaje para seleccionarlo"
+        android:textSize="13sp"
+        android:textColor="#777777"
+        android:gravity="center"
+        android:layout_marginBottom="8dp" />
+
+</LinearLayout>

@@ -1,5 +1,6 @@
 package com.example.tarea02
-
+import android.widget.ListView
+import android.widget.ArrayAdapter
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -7,10 +8,45 @@ import android.widget.EditText
 import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        //Tarea03: Mostrar la lista de personajes
+
+        val mostrarLista = true
+
+        if(mostrarLista){
+            setContentView(R.layout.activity_lista)
+
+            //Obtenemos el ListView del archivo XML
+            val lista = findViewById<ListView>(R.id.lvPersonajes)
+
+            //Personajes que aparecen en la lista
+            val personajes = arrayOf(
+                "Hatsune Miku",
+                "Kasane Teto",
+                "Akita Neru",
+                "Defoko",
+                "GUMI",
+                "Adachi Rei"
+
+            )
+
+            //Adaptador para mostrar los nombres
+           val adaptador = PersonajeAdapter(this, personajes)
+
+            lista.adapter = adaptador
+            //Detectamos cuando se selecciona un personaje
+            lista.setOnItemClickListener{
+                    _, _, position, _ ->
+                val seleccionado = personajes[position]
+
+                Toast.makeText( this, "Seleccionaste a $seleccionado", Toast.LENGTH_SHORT).show()
+            }
+            return
+
+        }
 
         setContentView(R.layout.activity_main)
 
